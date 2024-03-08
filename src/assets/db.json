@@ -1,0 +1,94 @@
+{
+  "funcionarios": [
+    {
+      "id": 1,
+      "nome": "Daniel Turner",
+      "telefone": "(535)424-0220x2603",
+      "email": "jeffrey46@hotmail.com",
+      "cidade": "Williamside",
+      "cargo": "Pharmacist, hospital",
+      "endereco": "6242 Melissa Dam Suite 946\nNew Holly, NJ 04518"
+    },
+    {
+      "id": 2,
+      "nome": "Chad Harrison PhD",
+      "telefone": "001-303-352-4051x2694",
+      "email": "upowell@hotmail.com",
+      "cidade": "Gamblefurt",
+      "cargo": "Pharmacist, community",
+      "endereco": "032 Bryant Underpass\nWest Dakotafurt, KY 22168"
+    },
+    {
+      "id": 3,
+      "nome": "Courtney Rogers",
+      "telefone": "001-335-535-0498x6258",
+      "email": "huffmankenneth@hotmail.com",
+      "cidade": "West Alfred",
+      "cargo": "Petroleum engineer",
+      "endereco": "1768 Aaron Fall Suite 992\nSouth Jeffrey, NJ 35590"
+    },
+    {
+      "id": 4,
+      "nome": "Daniel Ellis",
+      "telefone": "+1-334-979-2345x46256",
+      "email": "wsmith@gmail.com",
+      "cidade": "Lake John",
+      "cargo": "Learning disability nurse",
+      "endereco": "643 Shannon Loop\nWest Mandyport, TN 30725"
+    },
+    {
+      "id": 5,
+      "nome": "Andrea Mata MD",
+      "telefone": "+1-335-425-4562x7587",
+      "email": "lisaramos@cox.info",
+      "cidade": "North Darrell",
+      "cargo": "Microbiologist",
+      "endereco": "2437 Edward Ford\nMarkport, NY 38903"
+    },
+    {
+      "id": 6,
+      "nome": "Monica Thomas",
+      "telefone": "001-328-688-3638x214",
+      "email": "julielee@jones-simpson.com",
+      "cidade": "Crossberg",
+      "cargo": "Chartered legal executive (England and Wales)",
+      "endereco": "95402 Monique Points\nWest Trevor, AR 57401"
+    },
+    {
+      "id": 7,
+      "nome": "Alyssa Brown",
+      "telefone": "105.433.1193",
+      "email": "rsalazar@mitchell.info",
+      "cidade": "Jasminemouth",
+      "cargo": "Surveyor, mining",
+      "endereco": "37602 Timothy Locks\nAshleychester, OH 68563"
+    },
+    {
+      "id": 8,
+      "nome": "Tammy Wagner",
+      "telefone": "001-799-631-0879",
+      "email": "rochoa@lewis.com",
+      "cidade": "New Jason",
+      "cargo": "Environmental manager",
+      "endereco": "033 Erica Camp\nPort Carloshaven, WA 61552"
+    },
+    {
+      "id": 9,
+      "nome": "Gregory Humphrey",
+      "telefone": "+1-765-096-6577x70494",
+      "email": "naustin@gmail.com",
+      "cidade": "Calderonfurt",
+      "cargo": "Industrial/product designer",
+      "endereco": "3543 Madison Forest\nLake Jenniferberg, DE 70157"
+    },
+    {
+      "id": 10,
+      "nome": "Dylan Pierce DDS",
+      "telefone": "(933)648-1880x408",
+      "email": "johnrodriguez@white.com",
+      "cidade": "Port Jennybury",
+      "cargo": "Applications developer",
+      "endereco": "4072 Reyes Coves Suite 207\nPort Ashley, CA 12404"
+    }
+  ]
+}

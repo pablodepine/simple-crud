@@ -1,0 +1,11 @@
+.grid {
+  padding: 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  .adicionar-button {
+    margin-bottom: 1rem;
+    float: right;
+  }
+}

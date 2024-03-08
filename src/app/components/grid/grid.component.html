@@ -1,0 +1,48 @@
+<section class="grid">
+  <div class="adicionar-button">
+    <button type="button" class="btn btn-primary btn-sm">
+      Adicionar usuário
+    </button>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-light">
+        <tr>
+          <th class="col">Nome</th>
+          <th class="col">Telefone</th>
+          <th class="col">E-mail</th>
+          <th class="col">Cidade</th>
+          <th class="col">Cargo</th>
+          <th class="col">Endereço</th>
+          <th class="col-1">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <td class="col">{{ funcionario.nome }}</td>
+          <td class="col">{{ funcionario.telefone }}</td>
+          <td class="col">{{ funcionario.email }}</td>
+          <td class="col">{{ funcionario.cidade }}</td>
+          <td class="col">{{ funcionario.cargo }}</td>
+          <td class="col">{{ funcionario.endereco }}</td>
+          <td class="col">
+            <button
+              type="button"
+              (click)="editarFuncionario(funcionario.id)"
+              class="btn btn-primary btn-sm me-2"
+            >
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <button
+              type="button"
+              (click)="excluirFuncionario(funcionario.id)"
+              class="btn btn-danger btn-sm"
+            >
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
