@@ -1,6 +1,10 @@
 <section class="grid">
   <div class="adicionar-button">
-    <button type="button" class="btn btn-primary btn-sm">
+    <button
+      type="button"
+      class="btn btn-primary btn-sm"
+      (click)="adicionarFuncionario()"
+    >
       Adicionar usuário
     </button>
   </div>
@@ -14,21 +18,22 @@
           <th class="col">Cidade</th>
           <th class="col">Cargo</th>
           <th class="col">Endereço</th>
-          <th class="col-1">Ações</th>
+          <th class="col">Ações</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let funcionario of funcionarios">
-          <td class="col">{{ funcionario.nome }}</td>
-          <td class="col">{{ funcionario.telefone }}</td>
-          <td class="col">{{ funcionario.email }}</td>
-          <td class="col">{{ funcionario.cidade }}</td>
-          <td class="col">{{ funcionario.cargo }}</td>
-          <td class="col">{{ funcionario.endereco }}</td>
+        @for (funcionario of funcionarios; track funcionario){
+        <tr>
+          <td class="col">{{ funcionario?.nome }}</td>
+          <td class="col">{{ funcionario?.telefone }}</td>
+          <td class="col">{{ funcionario?.email }}</td>
+          <td class="col">{{ funcionario?.cidade }}</td>
+          <td class="col">{{ funcionario?.cargo }}</td>
+          <td class="col">{{ funcionario?.endereco }}</td>
           <td class="col">
             <button
               type="button"
-              (click)="editarFuncionario(funcionario.id)"
+              (click)="editarFuncionario(funcionario)"
               class="btn btn-primary btn-sm me-2"
             >
               <i class="bi bi-pencil-square"></i>
@@ -42,7 +47,43 @@
             </button>
           </td>
         </tr>
+        }
       </tbody>
     </table>
   </div>
 </section>
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded me-2" alt="..." />
+    <strong class="me-auto">Bootstrap</strong>
+    <small>11 mins ago</small>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="toast"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="toast-body">Hello, world! This is a toast message.</div>
+</div>
+
+@if (showModal) {
+<app-modal
+  [funcionarioParaEditar]="funcionarioParaEditar"
+  (close)="showModal = false"
+  (dadosFuncionario)="recebeDadosFuncionario($event)"
+></app-modal>
+}
+
+<div class="grid-toast toast-container position-fixed bottom-0 end-0 p-3">
+  <div
+    id="meuToast"
+    class="toast bg-primary text-bg-primary"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="toast-body">{{ toastMessage }}</div>
+  </div>
+</div>

@@ -1,11 +1,18 @@
 .grid {
-  padding: 2rem 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  margin: 2rem 2rem;
 
   .adicionar-button {
-    margin-bottom: 1rem;
+    height: 1rem;
+    margin-bottom: 2rem;
     float: right;
   }
+}
+
+::ng-deep .table-responsive {
+  width: 100%;
+}
+
+::ng-deep .toast {
+  width: 100%;
+  text-align: center;
 }
