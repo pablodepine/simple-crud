@@ -1,1 +1,149 @@
-<p>modal works!</p>
+<section>
+  <div class="modal-container" (click)="closeModal()">
+    <form
+      class="form"
+      [formGroup]="dadosFuncionarioForm"
+      (ngSubmit)="onSubmit()"
+      (click)="$event.stopPropagation()"
+    >
+      <input
+        id="id"
+        type="hidden"
+        class="form-control"
+        aria-describedby="id"
+        formControlName="id"
+      />
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome:</label>
+        <input
+          id="nome"
+          type="text"
+          class="form-control"
+          aria-describedby="nome"
+          formControlName="nome"
+        />
+        <div
+          *ngIf="
+            dadosFuncionarioForm.get('nome')?.invalid &&
+            dadosFuncionarioForm.get('nome')?.touched
+          "
+          class="text-danger fw-bold"
+        >
+          Nome é obrigatório.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone:</label>
+        <input
+          id="telefone"
+          type="text"
+          class="form-control"
+          aria-describedby="telefone"
+          formControlName="telefone"
+        />
+        <div
+          *ngIf="
+            dadosFuncionarioForm.get('telefone')?.invalid &&
+            dadosFuncionarioForm.get('telefone')?.touched
+          "
+          class="text-danger fw-bold"
+        >
+          Telefone é obrigatório.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          aria-describedby="email"
+          formControlName="email"
+        />
+        <div
+          *ngIf="
+            dadosFuncionarioForm.get('email')?.invalid &&
+            dadosFuncionarioForm.get('email')?.touched
+          "
+          class="text-danger fw-bold"
+        >
+          Email é obrigatório.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="cidade" class="form-label">Cidade:</label>
+        <input
+          id="cidade"
+          type="text"
+          class="form-control"
+          aria-describedby="cidade"
+          formControlName="cidade"
+        />
+        <div
+          *ngIf="
+            dadosFuncionarioForm.get('cidade')?.invalid &&
+            dadosFuncionarioForm.get('cidade')?.touched
+          "
+          class="text-danger fw-bold"
+        >
+          Cidade é obrigatória.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="cargo" class="form-label">Cargo:</label>
+        <input
+          id="cargo"
+          type="text"
+          class="form-control"
+          aria-describedby="cargo"
+          formControlName="cargo"
+        />
+        <div
+          *ngIf="
+            dadosFuncionarioForm.get('cargo')?.invalid &&
+            dadosFuncionarioForm.get('cargo')?.touched
+          "
+          class="text-danger fw-bold"
+        >
+          Cargo é obrigatório.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="endereco" class="form-label">Endereço:</label>
+        <input
+          id="endereco"
+          type="text"
+          class="form-control"
+          aria-describedby="endereco"
+          formControlName="endereco"
+        />
+        <div
+          *ngIf="
+            dadosFuncionarioForm.get('endereco')?.invalid &&
+            dadosFuncionarioForm.get('endereco')?.touched
+          "
+          class="text-danger fw-bold"
+        >
+          Endereço é obrigatório.
+        </div>
+      </div>
+      @if (!funcionarioParaEditar){
+      <button
+        type="submit"
+        [disabled]="!dadosFuncionarioForm.valid"
+        class="btn btn-primary"
+      >
+        Adicionar
+      </button>
+      } @else {
+      <button
+        type="submit"
+        [disabled]="!dadosFuncionarioForm.valid"
+        class="btn btn-primary"
+      >
+        Editar
+      </button>
+      }
+    </form>
+  </div>
+</section>
