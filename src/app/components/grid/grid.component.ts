@@ -7,6 +7,8 @@ import { ModalComponent } from '../modal/modal.component';
 
 declare var bootstrap: any;
 
+type Operation = 'ADICIONADO' | 'EXCLUÍDO' | 'EDITADO';
+
 @Component({
   selector: 'app-grid',
   standalone: true,
@@ -23,7 +25,7 @@ export class GridComponent implements OnInit {
   funcionario!: Funcionario;
   funcionarioParaEditar!: Funcionario;
   funcionarios: Funcionario[] = [];
-  toastMessage: string = '';
+  operation!: Operation;
 
   constructor(private funcionariosService: FuncionariosService) {}
 
@@ -63,6 +65,8 @@ export class GridComponent implements OnInit {
         this.funcionarios.splice(index, 1);
       }
     });
+    this.operation = 'EXCLUÍDO';
+    this.mostrarToast();
   }
 
   recebeDadosFuncionario(dadosFuncionario: Funcionario) {
@@ -72,7 +76,13 @@ export class GridComponent implements OnInit {
   }
 
   adicionaFuncionario(dadosFuncionario: Funcionario) {
+    let novoId: number;
+
+    novoId = this.funcionarios.length + 1;
+    dadosFuncionario.id = novoId;
     this.funcionarios.push(dadosFuncionario);
+
+    this.operation = 'ADICIONADO';
     this.mostrarToast();
   }
 
@@ -82,13 +92,13 @@ export class GridComponent implements OnInit {
         this.funcionarios[index] = dadosFuncionario;
       }
     });
-    this.toastMessage = 'Usuário adicionado com sucesso';
+    this.operation = 'EDITADO';
     this.mostrarToast();
   }
 
   mostrarToast() {
-    const toastEl = document.getElementById('meuToast');
-    const toast = new bootstrap.Toast(toastEl);
+    const toastElement = document.getElementById('toast');
+    const toast = new bootstrap.Toast(toastElement);
     toast.show();
   }
 }
