@@ -127,7 +127,7 @@
           Endereço é obrigatório.
         </div>
       </div>
-      @if (!funcionarioParaEditar){
+      @if (funcionarioParaEditar.id === 0){
       <button
         type="submit"
         [disabled]="!dadosFuncionarioForm.valid"

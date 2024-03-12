@@ -27,6 +27,7 @@ import {
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() funcionarioParaEditar!: Funcionario;
   @Input() display: boolean = false;
+  @Input() modalMode: string = '';
 
   @Output() dadosFuncionario: EventEmitter<Funcionario> = new EventEmitter();
   @Output() close = new EventEmitter<void>();
@@ -36,6 +37,17 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     document.addEventListener('keydown', this.handleKeyDown.bind(this));
+
+    if (this.modalMode === 'ADICIONAR')
+      this.funcionarioParaEditar = {
+        id: 0,
+        cargo: '',
+        cidade: '',
+        email: '',
+        endereco: '',
+        nome: '',
+        telefone: '',
+      };
 
     if (!this.funcionarioParaEditar) {
       this.dadosFuncionarioForm = new FormGroup({
