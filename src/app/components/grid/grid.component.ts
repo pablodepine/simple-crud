@@ -92,6 +92,7 @@ export class GridComponent implements OnInit {
         this.funcionarios[index] = dadosFuncionario;
       }
     });
+
     this.operation = 'EDITADO';
     this.mostrarToast();
   }
@@ -99,6 +100,7 @@ export class GridComponent implements OnInit {
   mostrarToast() {
     const toastElement = document.getElementById('toast');
     const toast = new bootstrap.Toast(toastElement);
+
     toast.show();
   }
 }
